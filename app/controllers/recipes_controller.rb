@@ -20,6 +20,13 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+     @ingredients = Ingredient.all.collect{|p| [p.name, p.id]}
+    #  @recipe = Recipe.where(id:)
+    #  params[:recipe][:ingredients].each do |ingredient_id|
+    #   next if ingredient_id.to_i == 0
+    #   ingredient = Ingredient.find(ingredient_id.to_i)
+    #   @recipe.ingredients << ingredient
+    # end
   end
 
   # POST /recipes
@@ -28,7 +35,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     params[:recipe][:ingredients].each do |ingredient_id|
       next if ingredient_id.to_i == 0
-      ingredient = Ingredient.find{ingredient_id.to_i}
+      ingredient = Ingredient.find(ingredient_id.to_i)
       @recipe.ingredients << ingredient
     end
 
@@ -48,6 +55,11 @@ class RecipesController < ApplicationController
   def update
     respond_to do |format|
       if @recipe.update(recipe_params)
+        params[:recipe][:ingredients].each do |ingredient_id|
+          next if ingredient_id.to_i == 0
+          ingredient = Ingredient.find(ingredient_id.to_i)
+          @recipe.ingredients << ingredient
+      end
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
         format.json { head :no_content }
       else
