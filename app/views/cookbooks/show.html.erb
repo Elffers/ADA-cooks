@@ -12,7 +12,8 @@
 <p>
   <strong>Recipes:</strong><br>
   <% @cookbook.recipes.each do |recipe|%>
-  <%= recipe.name %><br>
+  <%= recipe.name %>
+  <%= link_to 'Delete', "/cookbooks/#{@cookbook.id}/remove_recipe/#{recipe.id}s", method: :delete, data: {confirm: "Are you sure you want to remove this recipe?"}%><br>
   <% end %>
 </p>
 
