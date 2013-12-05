@@ -40,9 +40,10 @@
     <%= f.check_box :dairy %>
   </div>
 
-  
-  <%= f.select(:ingredients, @ingredients, {}, {:multiple => true}) %>
-  
+  <label><strong>Choose Ingredients:</strong></label><br>
+  <%= f.select(:ingredients, @ingredients, {}, {:multiple => true}) %><br>
+  <label><strong>Choose Gadgets:</strong></label><br>
+  <%= f.select(:gadgets, @gadgets, {}, {:multiple => true}) %>
 
   <div class="actions">
     <%= f.submit %>
