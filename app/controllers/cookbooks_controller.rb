@@ -53,7 +53,7 @@ class CookbooksController < ApplicationController
           next if recipe_id.to_i == 0
           recipe = Recipe.find(recipe_id.to_i)
           @cookbook.recipes << recipe
-    end
+      end
         format.html { redirect_to @cookbook, notice: 'Cookbook was successfully updated.' }
         format.json { head :no_content }
       else
@@ -76,6 +76,14 @@ class CookbooksController < ApplicationController
   def remove_recipe
     r = CookbookRecipe.find_by_cookbook_id_and_recipe_id(params[:id], params[:recipe_id])
     r.destroy
+    redirect_to cookbook_path(params[:id])
+  end
+
+  def add_note
+    r = CookbookRecipe.find_by_cookbook_id_and_recipe_id(params[:id], params[:recipe_id])
+    r.notes = params[:cookbook_recipe][:notes]
+    r.save!
+
     redirect_to cookbook_path(params[:id])
   end
 
