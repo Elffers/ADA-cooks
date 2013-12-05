@@ -16,11 +16,13 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @ingredients = Ingredient.all.collect{|p| [p.name, p.id]} #array of tuples of relevant info (name, id)
+    @gadgets = Gadget.all.collect{|p| [p.name, p.id]}
   end
 
   # GET /recipes/1/edit
   def edit
      @ingredients = Ingredient.all.collect{|p| [p.name, p.id]}
+     @gadgets = Gadget.all.collect{|p| [p.name, p.id]}
     #  @recipe = Recipe.where(id:)
     #  params[:recipe][:ingredients].each do |ingredient_id|
     #   next if ingredient_id.to_i == 0
@@ -38,7 +40,11 @@ class RecipesController < ApplicationController
       ingredient = Ingredient.find(ingredient_id.to_i)
       @recipe.ingredients << ingredient
     end
-
+    params[:recipe][:gadgets].each do |gadget_id|
+      next if gadget_id.to_i == 0
+      gadget = Gadget.find(gadget_id.to_i)
+      @recipe.gadgets << gadget
+    end
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
@@ -87,6 +93,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :user_id, :vegetarian, :soy, :gluten, :dairy, :vegan, :ingredients=>{})
+      params.require(:recipe).permit(:name, :user_id, :vegetarian, :soy, :gluten, :dairy, :vegan, :ingredients=>{}, :gadgets=>{})
     end
 end

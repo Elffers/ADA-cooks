@@ -3,8 +3,7 @@ class CreateRecipes < ActiveRecord::Migration
     create_table :recipes do |t|
       t.string :name
       t.integer :user_id
-      t.process :text
-      t.boolean :vegetarian
+      t.text :process
 
       t.timestamps
     end
