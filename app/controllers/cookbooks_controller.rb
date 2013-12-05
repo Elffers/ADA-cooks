@@ -73,6 +73,13 @@ class CookbooksController < ApplicationController
     end
   end
 
+  def remove_recipe
+    r = CookbookRecipe.find_by_cookbook_id_and_recipe_id(params[:id], params[:recipe_id])
+    r.destroy
+    redirect_to cookbook_path(params[:id])
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cookbook
