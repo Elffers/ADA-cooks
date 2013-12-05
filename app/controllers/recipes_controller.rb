@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
-    @ingredients = Ingredient.all.collect{|p| [p.name, p.id]}
+    @ingredients = Ingredient.all.collect{|p| [p.name, p.id]} #array of tuples of relevant info (name, id)
   end
 
   # GET /recipes/1/edit
