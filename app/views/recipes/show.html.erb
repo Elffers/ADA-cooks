@@ -33,9 +33,21 @@
 
 <p>
   <strong>Ingredients:</strong>
+  <ul>
+
   <% @recipe.ingredients.each do |ingredient|%>
-  <%= ingredient.name %>
+  <li><%= ingredient.name %></li>
   <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Gadgets:</strong>
+  <ul>
+  <% @recipe.gadgets.each do |gadget|%>
+  <li><%= gadget.name %></li>
+  <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
