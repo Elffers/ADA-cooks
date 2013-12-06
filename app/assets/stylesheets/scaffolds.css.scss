@@ -1,9 +1,31 @@
 body {
-  background-color: #fff;
+  background-image: image-url('cooking_background.jpg');
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+h1#title-header  {
+  font-family: arial;
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+header div#nav-bar {
+  background-color: white;
+  border: 1px solid black;
+  padding: 25px;
+}
+
+div#search-bar {
+  float: right;
+}
+
+a.layout {
+  float:right;
+  margin: 0 10px;
 }
 
 p, ol, ul, td {
@@ -66,4 +88,9 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+tr.cookbook-table {
+  background-color: #E6E6E6;
+  border: 1px solid black;
 }

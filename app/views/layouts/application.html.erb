@@ -3,11 +3,26 @@
 <head>
   <title>ADACooks</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %> 
+  <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
   <!-- can add style sheet here just as "sheet" , with actuall .css file stored in app/assets/stylesheets folder, but the default layout is is scarrolds.css.scss-->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <div id="nav-bar">
+    <h1 id="title-header">Ada Cook's</h1>
+    <div id="search-bar">
+    <form accept-charset="UTF-8" action="/search" method="get">
+      <label for="q">Search for:</label>
+      <input id="q" name="q" type="text" />
+      <input name="commit" type="submit" value="Search" />
+    </form>
+    </div>
+    <a class="layout" href="">Recipes</a>
+    <a class="layout" href="">Cookbooks</a>
+  </div>
+</header>
 
 <%= yield %>
 
