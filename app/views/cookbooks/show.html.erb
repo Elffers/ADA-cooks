@@ -11,20 +11,24 @@
 </p>
 <p>
   <strong>Recipes:</strong><br>
-  <ol>
+<!--   <ol> -->
+<table>
   <% @cookbook.recipes.each do |recipe|%>
-    <li><%= recipe.name %>
-    <%= link_to 'Delete', "/cookbooks/#{@cookbook.id}/remove_recipe/#{recipe.id}", method: :delete, data: {confirm: "Are you sure you want to remove this recipe?"}%></li><br>
-    <%= link_to 'Add Note', "/cookbooks/:id/add_note/:recipe_id", method: :post %>
+    <tr>
+      <td><%= recipe.name %></td>
+    <td><%= link_to 'Delete', "/cookbooks/#{@cookbook.id}/remove_recipe/#{recipe.id}", method: :delete, data: {confirm: "Are you sure you want to remove this recipe?"}%></li></td>
+    <td><%= link_to 'Add Note', "/cookbooks/:id/add_note/:recipe_id", method: :post %>
 
      <%= form_for :cookbook_recipe, url: "/cookbooks/#{@cookbook.id}/add_note/#{recipe.id}" do |p| %>
        <%= p.label :notes %><br />
-       <%= p.text_area :notes %><br />
+       <%= p.text_area :notes %>
 
        <%= submit_tag("Update") %>
-     <%end%> 
+     <%end%> </td>
+   </tr>
   <% end %>
-  </ol>
+  <!-- </ol> -->
+</table>
 </p>
 
 <%= link_to 'Edit', edit_cookbook_path(@cookbook) %> |
