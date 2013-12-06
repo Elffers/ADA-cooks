@@ -30,12 +30,17 @@
         <% end %>
       </div>
         <div id="ingredient_search">
-          <%= form_tag("/search_by_ingredient", method: "get") do %>
-            <%= label_tag(:ingredient, "Find recipe by ingredient!") %>
+          <%= form_tag("/supersearch", method: "get") do %>
+            <%= label_tag("Find recipe by ingredient!") %>
             <%= text_field_tag(:ingredient, params[:ingredient]) %>
             <%= submit_tag("Search") %>
           <% end %>
         </div>
+        <div>
+
+
+        </div>
+
      </div>
    </div>
   </header>
