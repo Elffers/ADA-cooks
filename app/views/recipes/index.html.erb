@@ -1,5 +1,5 @@
 <div class= "recipe_index">
-  <h1>Listing recipes</h1>
+  <h1>Recipes</h1>
 
 <table>
   <thead>
@@ -13,12 +13,6 @@
   </thead>
 
   <tbody>
-    <form accept-charset="UTF-8" action="/search" method="get">
-      <label for="q">Search by ingredient:</label>
-      <input id="q" name="q" type="text" />
-      <input name="commit" type="submit" value="Search" />
-    </form>
-
     <% @recipes.each do |recipe| %>  
       <tr>
         <td><%= recipe.name %></td>
