@@ -7,6 +7,18 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def search
+    @recipes = Recipe.where name: params[:name]
+    render :index
+  end
+
+  def search_by_ingredient
+    ingredient = Ingredient.find_by_name(params[:ingredient])
+    @recipes = ingredient.recipes
+    render :index
+  end
+
+
   # GET /recipes/1
   # GET /recipes/1.json
   def show

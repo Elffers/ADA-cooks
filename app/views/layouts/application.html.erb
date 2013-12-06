@@ -9,6 +9,18 @@
 </head>
 <body>
 
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:name, "Search by name:") %>
+    <%= text_field_tag(:name, params[:name]) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
+  <%= form_tag("/search_by_ingredient", method: "get") do %>
+    <%= label_tag(:ingredient, "Search by ingredient:") %>
+    <%= text_field_tag(:ingredient, params[:ingredient]) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
 <%= yield %>
 
 </body>
