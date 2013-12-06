@@ -13,6 +13,10 @@ ADACooks::Application.routes.draw do
 
   post "cookbooks/:id/add_note/:recipe_id" => "cookbooks#add_note"
 
+  get "/search" => "recipes#search"
+
+  get "/search_by_ingredient" => "recipes#search_by_ingredient"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
