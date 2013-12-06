@@ -4,37 +4,41 @@
   <title>ADACooks</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %> 
   <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
-  <!-- can add style sheet here just as "sheet" , with actuall .css file stored in app/assets/stylesheets folder, but the default layout is is scarrolds.css.scss-->
+  <!-- can add style sheet here just as "sheet" , with actual .css file stored in app/assets/stylesheets folder, but the default layout is is scaffolds.css.scss-->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-  <div id="nav-bar">
-    <h1 id="title-header">Ada Cook's</h1>
-    <div id="search-bar">
-    <form accept-charset="UTF-8" action="/search" method="get">
+  <header>
+    <div id="nav-bar">
+      <h1 id="title-header">ADA Cooks</h1>
+      
+      <!--  <form accept-charset="UTF-8" action="/search" method="get">
       <label for="q">Search for:</label>
       <input id="q" name="q" type="text" />
       <input name="commit" type="submit" value="Search" />
-    </form>
-    </div>
-    <a class="layout" href="">Recipes</a>
-    <a class="layout" href="">Cookbooks</a>
-  </div>
-</header>
-
-  <%= form_tag("/search", method: "get") do %>
-    <%= label_tag(:name, "Search by name:") %>
-    <%= text_field_tag(:name, params[:name]) %>
-    <%= submit_tag("Search") %>
-  <% end %>
-
-  <%= form_tag("/search_by_ingredient", method: "get") do %>
-    <%= label_tag(:ingredient, "Search by ingredient:") %>
-    <%= text_field_tag(:ingredient, params[:ingredient]) %>
-    <%= submit_tag("Search") %>
-  <% end %>
+      </form>
+      </div> -->
+      <%= link_to 'Recipes', recipes_path %>
+      <%= link_to 'Cookbook', cookbooks_path %>
+     <div id="search-bar">
+      <div id="recipe_search">
+        <%= form_tag("/search", method: "get") do %>
+          <%= label_tag(:name, "Find recipe by name!") %>
+          <%= text_field_tag(:name, params[:name]) %>
+          <%= submit_tag("Search") %>
+        <% end %>
+      </div>
+        <div id="ingredient_search">
+          <%= form_tag("/search_by_ingredient", method: "get") do %>
+            <%= label_tag(:ingredient, "Find recipe by ingredient!") %>
+            <%= text_field_tag(:ingredient, params[:ingredient]) %>
+            <%= submit_tag("Search") %>
+          <% end %>
+        </div>
+     </div>
+   </div>
+  </header>
 
 <%= yield %>
 

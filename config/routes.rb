@@ -17,6 +17,8 @@ ADACooks::Application.routes.draw do
 
   get "/search_by_ingredient" => "recipes#search_by_ingredient"
 
+  get "/views/recipes" => "recipes#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

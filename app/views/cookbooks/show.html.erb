@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="cookbook_container">
+  <p>
   <strong>Name:</strong>
   <%= @cookbook.name %>
 </p>
@@ -31,6 +32,8 @@
   <!-- </ol> -->
 </table>
 </p>
+
+</div>
 
 <%= link_to 'Edit', edit_cookbook_path(@cookbook) %> |
 <%= link_to 'Back', cookbooks_path %>
