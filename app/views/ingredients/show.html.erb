@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="ingredient_container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @ingredient.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @ingredient.name %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @ingredient.user_id %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @ingredient.user_id %>
+  </p>
 
-<p>
-  <strong>Unit:</strong>
-  <%= @ingredient.unit %>
-</p>
+  <p>
+    <strong>Unit:</strong>
+    <%= @ingredient.unit %>
+  </p>
 
-<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
-<%= link_to 'Back', ingredients_path %>
+  <%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+  <%= link_to 'Back', ingredients_path %>
+</div>

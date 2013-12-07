@@ -15,22 +15,23 @@ h1#title-header  {
 
 header div#nav-bar {
   background-color: white;
-  border: 1px solid black;
+  border: 3px solid #E6E6E6;
   padding: 20px;
 }
 
 div#search-bar {
-  float: right;
   padding: 10px;
-
+  display: block;
 }
 
 #ingredient_search{
-  display: block;
+  /*display: block;*/
+  float: right;
 }
 
 #recipe_search{
-  display: block;
+  /*display: block;*/
+  float: right;
 }
 
 a.layout {

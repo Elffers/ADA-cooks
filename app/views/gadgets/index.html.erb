@@ -1,31 +1,35 @@
-<h1>Listing gadgets</h1>
+<div class= "gadget_index_container">
+  <div class="gadget_index">
+  <h1>Listing gadgets</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th>Function</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @gadgets.each do |gadget| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= gadget.name %></td>
-        <td><%= gadget.user_id %></td>
-        <td><%= gadget.function %></td>
-        <td><%= link_to 'Show', gadget %></td>
-        <td><%= link_to 'Edit', edit_gadget_path(gadget) %></td>
-        <td><%= link_to 'Destroy', gadget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>User</th>
+        <th>Function</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @gadgets.each do |gadget| %>
+        <tr>
+          <td><%= gadget.name %></td>
+          <td><%= gadget.user_id %></td>
+          <td><%= gadget.function %></td>
+          <td><%= link_to 'Show', gadget %></td>
+          <td><%= link_to 'Edit', edit_gadget_path(gadget) %></td>
+          <td><%= link_to 'Destroy', gadget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Gadget', new_gadget_path %>
+  <br>
+
+  <%= link_to 'New Gadget', new_gadget_path %>
+</div>
+</div>
