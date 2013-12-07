@@ -2,14 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.cookbook_container{
+div.cookbook_container {
   background-color: white;
-  border: 1px solid black;
   padding: 15px;
 }
 
-.cookbook_index{
-  background-color: white;
-  border: 1px solid black;
+.cookbook_index_container {
   padding: 15px;
+  text-align: center;
+}
+
+.cookbook_index table {
+  margin: 0px auto;
+  text-align: left;
+}
+
+.cookbook_index {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 10px;
+  height: auto;
+  margin-top: 20px;
 }

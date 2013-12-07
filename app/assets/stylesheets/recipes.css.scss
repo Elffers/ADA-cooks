@@ -2,14 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.recipe_container{
+
+div.recipe_container {
   background-color: white;
-  border: 1px solid black;
   padding: 15px;
 }
 
-.recipe_index {
-  background-color: white;
-  border: 1px solid black;
+.recipe_index_container {
   padding: 15px;
+  text-align: center;
+}
+
+.recipe_index table {
+  margin: 0px auto;
+  text-align: left;
+}
+
+.recipe_index {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 10px;
+  height: auto;
+  margin-top: 20px;
 }

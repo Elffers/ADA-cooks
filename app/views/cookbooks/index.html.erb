@@ -1,31 +1,34 @@
-<div class="cookbook_index">
-  <h1>Cookbooks</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class= "cookbooks_index_container">
+  <div class="cookbooks_index">
+      <h1>Cookbooks</h1>
 
-  <tbody>
-    <% @cookbooks.each do |cookbook| %>
-      <tr>
-        <td><%= cookbook.name %></td>
-        <td><%= cookbook.user_id %></td>
-        <td><%= link_to 'Show', cookbook %></td>
-        <td><%= link_to 'Edit', edit_cookbook_path(cookbook) %></td>
-        <td><%= link_to 'Destroy', cookbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>User</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-<br>
+      <tbody>
+        <% @cookbooks.each do |cookbook| %>
+          <tr>
+            <td><%= cookbook.name %></td>
+            <td><%= cookbook.user_id %></td>
+            <td><%= link_to 'Show', cookbook %></td>
+            <td><%= link_to 'Edit', edit_cookbook_path(cookbook) %></td>
+            <td><%= link_to 'Destroy', cookbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Cookbook', new_cookbook_path %>
+    <br>
+
+    <%= link_to 'New Cookbook', new_cookbook_path %>
+  </div>
 </div>
