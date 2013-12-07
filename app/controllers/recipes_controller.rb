@@ -12,9 +12,14 @@ class RecipesController < ApplicationController
     render :index
   end
 
-  def search_by_ingredient
-    ingredient = Ingredient.find_by_name(params[:ingredient])
-    @recipes = ingredient.recipes
+  # def search_by_ingredient
+  #   ingredient = Ingredient.find_by_name(params[:ingredient])
+  #   @recipes = ingredient.recipes
+  #   render :index
+  # end
+
+  def supersearch
+    @recipes = Recipe.search(params[:ingredient]) 
     render :index
   end
 

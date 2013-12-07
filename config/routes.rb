@@ -1,4 +1,5 @@
 ADACooks::Application.routes.draw do
+  # devise_for :admins
   resources :cookbooks
 
   resources :gadgets
@@ -18,6 +19,8 @@ ADACooks::Application.routes.draw do
   get "/search_by_ingredient" => "recipes#search_by_ingredient"
 
   get "/views/recipes" => "recipes#index"
+
+  get "/supersearch" => "recipes#supersearch"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
