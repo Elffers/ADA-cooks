@@ -8,20 +8,15 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
   <header>
     <div id="nav-bar">
       <h1 id="title-header">ADA Cooks</h1>
       <%= link_to 'Recipes', recipes_path %>
       <%= link_to 'Cookbook', cookbooks_path %>
+     
      <div id="search-bar">
-      <div id="recipe_search">
-        <%= form_tag("/search", method: "get") do %>
-          <%= label_tag(:name, "Find recipe by name!") %>
-          <%= text_field_tag(:name, params[:name]) %>
-          <%= submit_tag("Search") %>
-        <% end %>
-      </div>
         <div id="ingredient_search">
           <%= form_tag("/supersearch", method: "get") do %>
             <%= label_tag("Find recipe by ingredient!") %>
@@ -29,13 +24,9 @@
             <%= submit_tag("Search") %>
           <% end %>
         </div>
-        <div>
-
-
-        </div>
-
      </div>
    </div>
+   
   </header>
 
 <%= yield %>
