@@ -20,17 +20,18 @@ header div#nav-bar {
 }
 
 div#search-bar {
-  float: right;
   padding: 10px;
-
+  display: block;
 }
 
 #ingredient_search{
-  display: block;
+  /*display: block;*/
+  float: right;
 }
 
 #recipe_search{
-  display: block;
+  /*display: block;*/
+  float: right;
 }
 
 a.layout {

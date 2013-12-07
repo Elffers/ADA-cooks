@@ -1,3 +1,27 @@
 // Place all the styles related to the Gadgets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.gadget_container {
+  background-color: white;
+  padding: 15px;
+}
+
+.gadget_index_container {
+  padding: 15px;
+  text-align: center;
+}
+
+.gadget_index table {
+  margin: 0px auto;
+  text-align: left;
+}
+
+.gadget_index {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 10px;
+  height: auto;
+}
