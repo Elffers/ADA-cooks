@@ -4,12 +4,25 @@
 
 div.ingredient_container {
   background-color: white;
-  border: 1px solid black;
   padding: 15px;
 }
 
-.ingredient_index {
-  background-color: white;
-  border: 1px solid black;
+.ingredient_index_container {
   padding: 15px;
+  text-align: center;
+}
+
+.ingredient_index table {
+  margin: 0px auto;
+  text-align: left;
+}
+
+.ingredient_index {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 10px;
+  height: auto;
+  margin-top: 20px;
 }
